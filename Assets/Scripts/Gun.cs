@@ -5,8 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Gun : MonoBehaviour
 {
-    private Rigidbody rb;
-    private float damage = 10f;
+    // private Rigidbody rb;
     public float bulletSpeed;
     public GameObject fpsCam;
     public AudioSource sfxShot;
@@ -17,7 +16,7 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        // rb = GetComponent<Rigidbody>();
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.activated.AddListener(FireBullet);
 

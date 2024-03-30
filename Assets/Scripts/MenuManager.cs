@@ -32,4 +32,5 @@ public class MenuManager : MonoBehaviour
         //Agar Menu tidak berbalik/inverted
         menu.transform.forward *= -1;
     }
+    
 }

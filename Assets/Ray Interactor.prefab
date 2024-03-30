@@ -136,7 +136,6 @@ MonoBehaviour:
   m_SampleFrequency: 60
   m_HitDetectionType: 2
   m_SphereCastRadius: 0.0125
-  m_ConeCastAngle: 3
   m_RaycastMask:
     serializedVersion: 2
     m_Bits: 2147483681
@@ -148,7 +147,6 @@ MonoBehaviour:
   m_AutoDeselect: 0
   m_TimeToAutoDeselect: 1
   m_EnableUIInteraction: 1
-  m_BlockUIOnInteractableSelection: 1
   m_AllowAnchorControl: 1
   m_UseForceGrab: 0
   m_RotateSpeed: 180
@@ -164,7 +162,6 @@ MonoBehaviour:
   m_EnableARRaycasting: 0
   m_OccludeARHitsWith3DObjects: 0
   m_OccludeARHitsWith2DObjects: 0
-  m_ScaleMode: 1
 --- !u!120 &5548489949647906499
 LineRenderer:
   serializedVersion: 2

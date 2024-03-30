@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class DestroyEnemy : MonoBehaviour
 {
+    public static int enemyDestroyed = 0;
     public int maxHealth = 3;   
     public int currentHealthWrong;
     public int currentHealthCorrect;
     public string enemyTag;
 
-    public Transform head;
+    private GameObject head;
     public GameObject healthBar;
 
     //Refrence ke scrip Healthbar
     public HealthBar healthBarWrong;
     public HealthBar healthBarCorrect;
 
+    public int score;
+
 
     void Start()
     {
+        score = 0;
         currentHealthWrong = 0;
         currentHealthCorrect = 0;
         // Memanggil method SetMaxHealth Daari script healthbar
@@ -28,18 +32,27 @@ public class DestroyEnemy : MonoBehaviour
 
     void Update()
     {
+        head = GameObject.FindWithTag("Player");
         //Menu Selalu melihat ke arah player
         healthBar.transform.LookAt(head.transform.position);
         //Agar Menu tidak berbalik/inverted
         healthBar.transform.forward *= -1;
+      
+
+        
     }
 
 
     private void OnTriggerEnter(Collider other) 
     {
 
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Itu adalah Player");
+        }
+        
         // Jika benar
-        if (other.gameObject.CompareTag(enemyTag))
+        else if (other.gameObject.CompareTag(enemyTag))
         {
             TakeDamageCorrect(1);
             Destroy(other.gameObject);
@@ -48,6 +61,11 @@ public class DestroyEnemy : MonoBehaviour
             {
                 Debug.Log("Hancurrrr Benar");
                 Destroy(gameObject);
+                ScoreUI.score += 10;
+                enemyDestroyed +=1;
+                Debug.Log(enemyDestroyed);
+                
+
             }
             
             
@@ -61,14 +79,21 @@ public class DestroyEnemy : MonoBehaviour
                 TakeDamageWrong(1);
                 Destroy(other.gameObject);
             }
+
             
             
             if (currentHealthWrong >= 3)
             {
                 Debug.Log("Hancurrrr SALAHH");
                 Destroy(gameObject);
+                ScoreUI.score -= 10;
+                enemyDestroyed +=1;
+                Debug.Log(enemyDestroyed);
+                
+
             }
         }
+
     }
 
     void TakeDamageWrong(int damage)

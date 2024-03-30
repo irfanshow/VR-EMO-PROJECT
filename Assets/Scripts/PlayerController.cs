@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public InputActionProperty moveButton;
     public AudioSource sfxWalk;
     
-    private bool isMoving = false;
+    // private bool isMoving = false;
   
     // Update is called once per frame
     void Update()

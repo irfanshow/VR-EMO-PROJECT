@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/GameplayProto.unity
+    guid: ce7099ee71a827d43a2dcf1a39ed414e
+  - enabled: 1
     path: Assets/Scenes/Title Scene.unity
     guid: e1448e738c5113b40952583c5b8664b9
   - enabled: 1
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level.unity
     guid: 825442b4f91275544a98cd5321848855
-  - enabled: 1
-    path: Assets/Scenes/GameplayProto.unity
-    guid: ce7099ee71a827d43a2dcf1a39ed414e
   m_configObjects:
     Unity.XR.PICO.LivePreview.Settings: {fileID: 11400000, guid: 8ad3f498184a6d24cae37c19f0b34eba, type: 2}
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: e37d1431fce52fb408b113c72070926b, type: 2}
